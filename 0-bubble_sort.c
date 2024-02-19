@@ -1,17 +1,17 @@
 #include "sort.h"
 
 /**
- * swap_ints - Swap two integers in an array.
- * @a: The first integer to swap.
- * @b: The second integer to swap.
+ * switch_ints - switch two integers in an array.
+ * @j: The first integer to swap.
+ * @k: The second integer to swap.
  */
-void swap_ints(int *a, int *b)
+void switch_ints(int *j, int *k)
 {
-	int tmp;
+	int tp;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	tp = *j;
+	*j = *k;
+	*k = tp;
 }
 
 /**
@@ -23,24 +23,24 @@ void swap_ints(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, len = size;
-	bool bubbly = false;
+	size_t m, leng = size;
+	bool baby = false;
 
 	if (array == NULL || size < 2)
 		return;
 
-	while (bubbly == false)
+	while (baby == false)
 	{
-		bubbly = true;
-		for (i = 0; i < len - 1; i++)
+		baby = true;
+		for (i = 0; m < leng - 1; m++)
 		{
-			if (array[i] > array[i + 1])
+			if (array[m] > array[m + 1])
 			{
-				swap_ints(array + i, array + i + 1);
+				switch_ints(array + m, array + m + 1);
 				print_array(array, size);
-				bubbly = false;
+				baby = false;
 			}
 		}
-		len--;
+		leng--;
 	}
 }
