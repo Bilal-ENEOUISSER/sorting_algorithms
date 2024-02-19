@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void swap_ints(int *a, int *b);
+void switch_ints(int *a, int *b);
 int lomuto_partition(int *array, size_t size, int left, int right);
 void lomuto_sort(int *array, size_t size, int left, int right);
 void quick_sort(int *array, size_t size);
@@ -40,7 +40,7 @@ int lomuto_partition(int *array, size_t size, int left, int right)
 		{
 			if (above < below)
 			{
-				swap_ints(array + below, array + above);
+				switch_ints(array + below, array + above);
 				print_array(array, size);
 			}
 			above++;
@@ -49,7 +49,7 @@ int lomuto_partition(int *array, size_t size, int left, int right)
 
 	if (array[above] > *pivot)
 	{
-		swap_ints(array + above, pivot);
+		switch_ints(array + above, pivot);
 		print_array(array, size);
 	}
 
