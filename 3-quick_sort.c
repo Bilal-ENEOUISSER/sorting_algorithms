@@ -6,17 +6,17 @@ void lomuto_sort(int *array, size_t size, int left, int right);
 void quick_sort(int *array, size_t size);
 
 /**
- * swap_ints - Swap two integers in an array.
- * @a: The first integer to swap.
- * @b: The second integer to swap.
+ * switch_ints - switch two integers in an array.
+ * @j: The first integer to swap.
+ * @k: The second integer to swap.
  */
-void swap_ints(int *a, int *b)
+void switch_ints(int *j, int *k)
 {
-	int tmp;
+	int tp;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	tp = *j;
+	*j = *k;
+	*k = tp;
 }
 
 /**
