@@ -5,7 +5,7 @@
 
 #include "sort.h"
 
-void switch_ints(int *a, int *b);
+void switch_ints(int *j, int *k);
 void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
 		char flow);
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
