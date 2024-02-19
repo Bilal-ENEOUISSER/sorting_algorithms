@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void swap_ints(int *a, int *b);
+void switch_ints(int *a, int *b);
 void max_heapify(int *array, size_t size, size_t base, size_t root);
 void heap_sort(int *array, size_t size);
 
@@ -40,7 +40,7 @@ void max_heapify(int *array, size_t size, size_t base, size_t root)
 
 	if (large != root)
 	{
-		swap_ints(array + root, array + large);
+		switch_ints(array + root, array + large);
 		print_array(array, size);
 		max_heapify(array, size, base, large);
 	}
@@ -67,7 +67,7 @@ void heap_sort(int *array, size_t size)
 
 	for (i = size - 1; i > 0; i--)
 	{
-		swap_ints(array, array + i);
+		switch_ints(array, array + i);
 		print_array(array, size);
 		max_heapify(array, size, i, 0);
 	}
