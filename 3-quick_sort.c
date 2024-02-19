@@ -13,7 +13,7 @@
 size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
 	ssize_t i, j;
-	int swap, pivot;
+	int switch, pivot;
 
 	pivot = array[hi];
 	i = lo - 1;
@@ -24,18 +24,18 @@ size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 			i++;
 			if (i != j)
 			{
-				swap = array[i];
+				switch = array[i];
 				array[i] = array[j];
-				array[j] = swap;
+				array[j] = switch;
 				print_array(array, size);
 			}
 		}
 	}
 	if (array[hi] < array[i + 1])
 	{
-		swap = array[i + 1];
+		switch = array[i + 1];
 		array[i + 1] = array[hi];
-		array[hi] = swap;
+		array[hi] = switch;
 		print_array(array, size);
 	}
 	return (i + 1);

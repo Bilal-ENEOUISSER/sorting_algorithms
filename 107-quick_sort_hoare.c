@@ -14,7 +14,7 @@
 */
 size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	int swap, pivot;
+	int switch, pivot;
 
 	pivot = array[hi];
 	while (lo <= hi)
@@ -27,9 +27,9 @@ size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 		{
 			if (lo != hi)
 			{
-				swap = array[lo];
+				switch = array[lo];
 				array[lo] = array[hi];
-				array[hi] = swap;
+				array[hi] = switch;
 				print_array(array, size);
 			}
 			lo++;

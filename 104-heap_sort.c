@@ -11,24 +11,24 @@
 */
 void sift_down(int *array, size_t root, size_t end, size_t size)
 {
-	size_t left_child, right_child, swap;
+	size_t left_child, right_child, switch;
 	int temp;
 
 	while ((left_child = (2 * root) + 1) <= end)
 	{
-		swap = root;
+		switch = root;
 		right_child = left_child + 1;
-		if (array[swap] < array[left_child])
-			swap = left_child;
-		if (right_child <= end && array[swap] < array[right_child])
-			swap = right_child;
-		if (swap == root)
+		if (array[switch] < array[left_child])
+			switch = left_child;
+		if (right_child <= end && array[switch] < array[right_child])
+			switch = right_child;
+		if (switch == root)
 			return;
 		temp = array[root];
-		array[root] = array[swap];
-		array[swap] = temp;
+		array[root] = array[switch];
+		array[switch] = temp;
 		print_array(array, size);
-		root = swap;
+		root = switch;
 	}
 }
 

@@ -13,16 +13,16 @@
 void bitonic_compare(char up, int *array, size_t size)
 {
 	size_t i, dist;
-	int swap;
+	int switch;
 
 	dist = size / 2;
 	for (i = 0; i < dist; i++)
 	{
 		if ((array[i] > array[i + dist]) == up)
 		{
-			swap = array[i];
+			switch = array[i];
 			array[i] = array[i + dist];
-			array[i + dist] = swap;
+			array[i + dist] = switch;
 		}
 	}
 }
