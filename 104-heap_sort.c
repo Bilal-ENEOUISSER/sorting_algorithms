@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void switch_ints(int *a, int *b);
+void switch_ints(int *j, int *k);
 void max_heapify(int *array, size_t size, size_t base, size_t root);
 void heap_sort(int *array, size_t size);
 
