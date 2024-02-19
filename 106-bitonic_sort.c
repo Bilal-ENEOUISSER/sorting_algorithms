@@ -2,39 +2,39 @@
 #include <stdio.h>
 
 /**
-* bitonic_compare - sort the values in a sub-array with respect to
-* the Bitonic sort algorithm
-* @up: direction of sorting
-* @array: sub-array to sort
-* @size: size of the sub-array
-*
-* Return: void
-*/
+ * bitonic_compare - sort the values in a sub-array with respect to
+ * the Bitonic sort algorithm
+ * @up: direction of sorting
+ * @array: sub-array to sort
+ * @size: size of the sub-array
+ *
+ * Return: void
+ */
 void bitonic_compare(char up, int *array, size_t size)
 {
 	size_t i, dist;
-	int switch;
+	int switch_int;
 
 	dist = size / 2;
 	for (i = 0; i < dist; i++)
 	{
 		if ((array[i] > array[i + dist]) == up)
 		{
-			switch = array[i];
+			switch_int = array[i];
 			array[i] = array[i + dist];
-			array[i + dist] = switch;
+			array[i + dist] = switch_int;
 		}
 	}
 }
 
 /**
-* bitonic_merge - recursive function that merges two sub-arrays
-* @up: direction of sorting
-* @array: sub-array to sort
-* @size: size of the sub-array
-*
-* Return: void
-*/
+ * bitonic_merge - recursive function that merges two sub-arrays
+ * @up: direction of sorting
+ * @array: sub-array to sort
+ * @size: size of the sub-array
+ *
+ * Return: void
+ */
 void bitonic_merge(char up, int *array, size_t size)
 {
 	if (size < 2)
@@ -45,14 +45,14 @@ void bitonic_merge(char up, int *array, size_t size)
 }
 
 /**
-* bit_sort - recursive function using the Bitonic sort algorithm
-* @up: direction of sorting
-* @array: sub-array to sort
-* @size: size of the sub-array
-* @t: total size of the original array
-*
-* Return: void
-*/
+ * bit_sort - recursive function using the Bitonic sort algorithm
+ * @up: direction of sorting
+ * @array: sub-array to sort
+ * @size: size of the sub-array
+ * @t: total size of the original array
+ *
+ * Return: void
+ */
 void bit_sort(char up, int *array, size_t size, size_t t)
 {
 	if (size < 2)
@@ -64,17 +64,16 @@ void bit_sort(char up, int *array, size_t size, size_t t)
 	bitonic_merge(up, array, size);
 	printf("Result [%lu/%lu] (%s):\n", size, t, (up == 1) ? "UP" : "DOWN");
 	print_array(array, size);
-
 }
 
 /**
-* bitonic_sort - sorts an array of integers in ascending order using
-* the Bitonic sort algorithm
-* @array: array to sort
-* @size: size of the array
-*
-* Return: void
-*/
+ * bitonic_sort - sorts an array of integers in ascending order using
+ * the Bitonic sort algorithm
+ * @array: array to sort
+ * @size: size of the array
+ *
+ * Return: void
+ */
 void bitonic_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)

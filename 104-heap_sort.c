@@ -1,44 +1,44 @@
 #include "sort.h"
 
 /**
-* sift_down - fixes a heap
-* @array: the heap to fix
-* @root: the root of the heap
-* @end: the last index of the heap
-* @size: size of the array
-*
-* Return: void
-*/
+ * sift_down - fixes a heap
+ * @array: the heap to fix
+ * @root: the root of the heap
+ * @end: the last index of the heap
+ * @size: size of the array
+ *
+ * Return: void
+ */
 void sift_down(int *array, size_t root, size_t end, size_t size)
 {
-	size_t left_child, right_child, switch;
+	size_t left_child, right_child, switch_int;
 	int temp;
 
 	while ((left_child = (2 * root) + 1) <= end)
 	{
-		switch = root;
+		switch_int = root;
 		right_child = left_child + 1;
-		if (array[switch] < array[left_child])
-			switch = left_child;
-		if (right_child <= end && array[switch] < array[right_child])
-			switch = right_child;
-		if (switch == root)
+		if (array[switch_int] < array[left_child])
+			switch_int = left_child;
+		if (right_child <= end && array[switch_int] < array[right_child])
+			switch_int = right_child;
+		if (switch_int == root)
 			return;
 		temp = array[root];
-		array[root] = array[switch];
-		array[switch] = temp;
+		array[root] = array[switch_int];
+		array[switch_int] = temp;
 		print_array(array, size);
-		root = switch;
+		root = switch_int;
 	}
 }
 
 /**
-* make_heap - makes a heap from an unsorted array
-* @array: array to turn into a heap
-* @size: size of the array
-*
-* Return: void
-*/
+ * make_heap - makes a heap from an unsorted array
+ * @array: array to turn into a heap
+ * @size: size of the array
+ *
+ * Return: void
+ */
 void make_heap(int *array, size_t size)
 {
 	size_t parent;
@@ -52,12 +52,12 @@ void make_heap(int *array, size_t size)
 }
 
 /**
-* heap_sort - sorts an array of ints in ascending order w/ the Heap sort algo
-* @array: array to sort
-* @size: size of the array
-*
-* Return: void
-*/
+ * heap_sort - sorts an array of ints in ascending order w/ the Heap sort algo
+ * @array: array to sort
+ * @size: size of the array
+ *
+ * Return: void
+ */
 void heap_sort(int *array, size_t size)
 {
 	size_t end;
