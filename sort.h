@@ -50,7 +50,7 @@ void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
-void switch_ints(int *j, int *k);
+
 
 
 #endif /* SORT_H */
