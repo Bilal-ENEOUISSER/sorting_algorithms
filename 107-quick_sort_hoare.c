@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void swap_ints(int *a, int *b);
+void switch_ints(int *a, int *b);
 int hoare_partition(int *array, size_t size, int left, int right);
 void hoare_sort(int *array, size_t size, int left, int right);
 void quick_sort_hoare(int *array, size_t size);
@@ -48,7 +48,7 @@ int hoare_partition(int *array, size_t size, int left, int right)
 
 		if (above < below)
 		{
-			swap_ints(array + above, array + below);
+			switch_ints(array + above, array + below);
 			print_array(array, size);
 		}
 	}
