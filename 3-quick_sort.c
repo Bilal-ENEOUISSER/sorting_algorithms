@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void switch_ints(int *a, int *b);
+void switch_ints(int *j, int *k);
 int lomuto_partition(int *array, size_t size, int left, int right);
 void lomuto_sort(int *array, size_t size, int left, int right);
 void quick_sort(int *array, size_t size);
