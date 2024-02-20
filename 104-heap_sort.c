@@ -11,42 +11,42 @@
  */
 void sift_down(int *array, size_t root, size_t end, size_t size)
 {
-	size_t left_child, right_child, switch_int;
-	int temp;
+	size_t l_child, r_child, switch_int;
+	int tp;
 
-	while ((left_child = (2 * root) + 1) <= end)
+	while ((l_child = (2 * root) + 1) <= end)
 	{
 		switch_int = root;
-		right_child = left_child + 1;
-		if (array[switch_int] < array[left_child])
-			switch_int = left_child;
-		if (right_child <= end && array[switch_int] < array[right_child])
-			switch_int = right_child;
+		r_child = l_child + 1;
+		if (array[switch_int] < array[l_child])
+			switch_int = l_child;
+		if (r_child <= end && array[switch_int] < array[r_child])
+			switch_int = r_child;
 		if (switch_int == root)
 			return;
-		temp = array[root];
+		tp = array[root];
 		array[root] = array[switch_int];
-		array[switch_int] = temp;
+		array[switch_int] = tp;
 		print_array(array, size);
 		root = switch_int;
 	}
 }
 
 /**
- * make_heap - makes a heap from an unsorted array
+ * m_hp - makes a heap from an unsorted array
  * @array: array to turn into a heap
  * @size: size of the array
  *
  * Return: void
  */
-void make_heap(int *array, size_t size)
+void m_hp(int *array, size_t size)
 {
-	size_t parent;
+	size_t prt;
 
-	for (parent = ((size - 1) - 1) / 2; 1; parent--)
+	for (prt = ((size - 1) - 1) / 2; 1; prt--)
 	{
-		sift_down(array, parent, size - 1, size);
-		if (parent == 0)
+		sift_down(array, prt, size - 1, size);
+		if (prt == 0)
 			break;
 	}
 }
@@ -60,20 +60,20 @@ void make_heap(int *array, size_t size)
  */
 void heap_sort(int *array, size_t size)
 {
-	size_t end;
-	int temp;
+	size_t ed;
+	int tp;
 
 	if (array == NULL || size < 2)
 		return;
-	make_heap(array, size);
-	end = size - 1;
-	while (end > 0)
+	m_hp(array, size);
+	ed = size - 1;
+	while (ed > 0)
 	{
-		temp = array[end];
-		array[end] = array[0];
-		array[0] = temp;
+		tp = array[ed];
+		array[ed] = array[0];
+		array[0] = tp;
 		print_array(array, size);
-		end--;
-		sift_down(array, 0, end, size);
+		ed--;
+		sift_down(array, 0, ed, size);
 	}
 }
