@@ -50,15 +50,15 @@ size_t part(int *array, ssize_t lo, ssize_t hi, size_t size)
  *
  * Return: void
  */
-void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size)
+void q_sort(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
 	ssize_t piv;
 
 	if (lo < hi)
 	{
 		piv = part(array, lo, hi, size);
-		quicksort(array, lo, piv - 1, size);
-		quicksort(array, piv + 1, hi, size);
+		q_sort(array, lo, piv - 1, size);
+		q_sort(array, piv + 1, hi, size);
 	}
 }
 
@@ -74,5 +74,5 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
-	quicksort(array, 0, size - 1, size);
+	q_sort(array, 0, size - 1, size);
 }
