@@ -5,7 +5,7 @@ void swap_list(listint_t *, listint_t *, listint_t **);
 /**
  * insertion_sort_list - sorts a list using insertion sort
  *
- * @list: double pointer to head of lis
+ * @list: double pointer to h of lis
  */
 void insertion_sort_list(listint_t **list)
 {
@@ -34,22 +34,22 @@ void insertion_sort_list(listint_t **list)
  *
  * @curr: current node
  * @prev: previous node
- * @head: head of list
+ * @h: h of list
  */
-void swap_list(listint_t *curr, listint_t *prev, listint_t **head)
+void swap_list(listint_t *curr, listint_t *prev, listint_t **h)
 {
-	listint_t *temp1 = curr->next;
-	listint_t *temp2 = prev->prev;
+	listint_t *tp1 = curr->next;
+	listint_t *tp2 = prev->prev;
 
-	if (temp1 != NULL)
-		temp1->prev = prev;
-	if (temp2 != NULL)
-		temp2->next = curr;
-	curr->prev = temp2;
-	prev->next = temp1;
+	if (tp1 != NULL)
+		tp1->prev = prev;
+	if (tp2 != NULL)
+		tp2->next = curr;
+	curr->prev = tp2;
+	prev->next = tp1;
 	curr->next = prev;
 	prev->prev = curr;
-	if (*head == prev)
-		*head = curr;
-	print_list(*head);
+	if (*h == prev)
+		*h = curr;
+	print_list(*h);
 }
