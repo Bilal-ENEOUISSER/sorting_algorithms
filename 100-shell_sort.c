@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void insertion_sort(int *, long int, long int, size_t);
+void ins_sort(int *, long int, long int, size_t);
 
 /**
 * shell_sort - sorts using shell sort and knuths sequence
@@ -10,25 +10,25 @@ void insertion_sort(int *, long int, long int, size_t);
 */
 void shell_sort(int *array, size_t size)
 {
-	long int n = 1;
-	long int i, k, temp;
+	long int var4 = 1;
+	long int i, var5, tp;
 
 	if (size < 2)
 		return;
 
-	while (n < (long int)size / 3)
-		n = n * 3 + 1;
+	while (var4 < (long int)size / 3)
+		var4 = var4 * 3 + 1;
 
-	while (n > 0)
+	while (var4 > 0)
 	{
-		for (i = n; i < (long int) size; i++)
+		for (i = var4; i < (long int) size; i++)
 		{
-			temp = array[i];
-			for (k = i; k >= n && array[k - n] > temp; k = k - n)
-				array[k] = array[k - n];
-			array[k] = temp;
+			tp = array[i];
+			for (var5 = i; var5 >= var4 && array[var5 - var4] > tp; var5 = var5 - var4)
+				array[var5] = array[var5 - var4];
+			array[var5] = tp;
 		}
 		print_array(array, size);
-		n = (n - 1) / 3;
+		var4 = (var4 - 1) / 3;
 	}
 }
