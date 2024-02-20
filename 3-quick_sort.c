@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * partition - finds the partition for the quicksort using the Lomuto scheme
+ * part - finds the partition for the quicksort using the Lomuto scheme
  * @array: array to sort
  * @lo: lowest index of the partition to sort
  * @hi: highest index of the partition to sort
@@ -10,7 +10,7 @@
  *
  * Return: index of the partition
  */
-size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
+size_t part(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
 	ssize_t var1, var3;
 	int switch_int, piv;
@@ -56,7 +56,7 @@ void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size)
 
 	if (lo < hi)
 	{
-		piv = partition(array, lo, hi, size);
+		piv = part(array, lo, hi, size);
 		quicksort(array, lo, piv - 1, size);
 		quicksort(array, piv + 1, hi, size);
 	}
