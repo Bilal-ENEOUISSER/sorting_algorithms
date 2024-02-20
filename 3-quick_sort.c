@@ -42,7 +42,7 @@ size_t part(int *array, ssize_t lo, ssize_t hi, size_t size)
 }
 
 /**
- * quicksort - sorts a partition of an array of integers
+ * q_sort - sorts a partition of an array of integers
  * @array: array to sort
  * @lo: lowest index of the partition to sort
  * @hi: highest index of the partition to sort
