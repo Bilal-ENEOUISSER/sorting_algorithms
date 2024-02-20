@@ -12,33 +12,33 @@
  */
 size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	ssize_t i, j;
-	int switch_int, pivot;
+	ssize_t var1, var3;
+	int switch_int, piv;
 
-	pivot = array[hi];
-	i = lo - 1;
-	for (j = lo; j < hi; j++)
+	piv = array[hi];
+	var1 = lo - 1;
+	for (var3 = lo; var3 < hi; var3++)
 	{
-		if (array[j] < pivot)
+		if (array[var3] < piv)
 		{
-			i++;
-			if (i != j)
+			var1++;
+			if (var1 != var3)
 			{
-				switch_int = array[i];
-				array[i] = array[j];
-				array[j] = switch_int;
+				switch_int = array[var1];
+				array[var1] = array[var3];
+				array[var3] = switch_int;
 				print_array(array, size);
 			}
 		}
 	}
-	if (array[hi] < array[i + 1])
+	if (array[hi] < array[var1 + 1])
 	{
-		switch_int = array[i + 1];
-		array[i + 1] = array[hi];
+		switch_int = array[var1 + 1];
+		array[var1 + 1] = array[hi];
 		array[hi] = switch_int;
 		print_array(array, size);
 	}
-	return (i + 1);
+	return (var1 + 1);
 }
 
 /**
