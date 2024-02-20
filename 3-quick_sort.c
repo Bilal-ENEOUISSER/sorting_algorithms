@@ -52,13 +52,13 @@ size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
  */
 void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	ssize_t pivot;
+	ssize_t piv;
 
 	if (lo < hi)
 	{
-		pivot = partition(array, lo, hi, size);
-		quicksort(array, lo, pivot - 1, size);
-		quicksort(array, pivot + 1, hi, size);
+		piv = partition(array, lo, hi, size);
+		quicksort(array, lo, piv - 1, size);
+		quicksort(array, piv + 1, hi, size);
 	}
 }
 
