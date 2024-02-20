@@ -9,47 +9,47 @@ void swap_list(listint_t *, listint_t *, listint_t **);
 */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr = NULL;
-	listint_t *prev = NULL;
+	listint_t *cur = NULL;
+	listint_t *prv = NULL;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	curr = (*list)->next;
-	prev = curr->prev;
-	while (curr != NULL)
+	cur = (*list)->next;
+	prv = cur->prv;
+	while (cur != NULL)
 	{
-		prev = curr->prev;
-		while (prev != NULL && prev->n > curr->n)
+		prv = cur->prv;
+		while (prv != NULL && prv->n > cur->n)
 		{
-			swap_list(curr, prev, list);
-			prev = curr->prev;
+			swap_list(cur, prv, list);
+			prv = cur->prv;
 		}
-		curr = curr->next;
+		cur = cur->next;
 	}
 }
 
 /**
 * swap_list - swaps two members of a list
 *
-* @curr: current node
-* @prev: previous node
+* @cur: current node
+* @prv: previous node
 * @head: head of list
 */
-void swap_list(listint_t *curr, listint_t *prev, listint_t **head)
+void swap_list(listint_t *cur, listint_t *prv, listint_t **head)
 {
-	listint_t *temp1 = curr->next;
-	listint_t *temp2 = prev->prev;
+	listint_t *temp1 = cur->next;
+	listint_t *temp2 = prv->prv;
 
 	if (temp1 != NULL)
-		temp1->prev = prev;
+		temp1->prv = prv;
 	if (temp2 != NULL)
-		temp2->next = curr;
-	curr->prev = temp2;
-	prev->next = temp1;
-	curr->next = prev;
-	prev->prev = curr;
-	if (*head == prev)
-		*head = curr;
+		temp2->next = cur;
+	cur->prv = temp2;
+	prv->next = temp1;
+	cur->next = prv;
+	prv->prv = cur;
+	if (*head == prv)
+		*head = cur;
 	print_list(*head);
 }
